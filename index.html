@@ -21,7 +21,7 @@
         }
 
         main {
-            background: #F8F8F8;
+            background: #d8d0d0;
         }
 
         .card {
@@ -44,7 +44,8 @@
 
 <body class="font-worksans">
     <header class="bg-[#F9F6E2]">
-        <div class="container mx-auto flex flex-col md:flex-row justify-center items-center gap-12  md:h-[850px]">
+        <div
+            class="container mx-auto flex flex-col lg:flex-row md:flex-col justify-center items-center gap-12  lg:h-[850px]">
             <div class="text-center">
                 <h4 class="font-medium text-2xl">---SALE FEVER---</h4>
                 <h2 class="font-bold text-6xl mt-12">Purchase TK 200 or <br> above & get<span class="text-[#E527B2]">
@@ -58,14 +59,14 @@
         </div>
     </header>
     <main class="mt-32">
-        <div class="grid md:grid-cols-3 grid-cols-1 gap-20 container mx-auto">
+        <div class="grid lg:grid-cols-3 md:grid-cols-1 grid-cols-1 gap-20 container mx-auto">
             <!-- Left side with 9 cards -->
             <div class="col-span-2">
                 <!-- Kitchnware Cards -->
                 <h3 class="text-2xl font-semibold mb-4 text-center md:text-left">Kitchenware</h3>
-                <div class="grid md:grid-cols-3 grid-cols-1 gap-4">
+                <div class="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4">
                     <!-- card 1 -->
-                    <div class="flex items-center justify-center">
+                    <div onclick="handleClick(this)" class="flex items-center justify-center">
                         <div class="card w-[320px] shadow-2xl">
                             <figure class="px-10">
                                 <div class="bg-[#1111110D] w-[302px] flex justify-center rounded-lg p-4">
@@ -82,12 +83,12 @@
                                     <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
                                 </div>
                                 <h2 class="card-title">K. Accessories</h2>
-                                <p>39.00 TK</p>
+                                <p class='price'>39.00 TK</p>
                             </div>
                         </div>
                     </div>
                     <!-- card 2 -->
-                    <div class="flex items-center justify-center">
+                    <div onclick="handleClick(this)" class="flex items-center justify-center">
                         <div class="card w-[320px] shadow-2xl">
                             <figure class="px-10">
                                 <div class="bg-[#1111110D] w-[302px] flex justify-center rounded-lg p-4">
@@ -104,12 +105,12 @@
                                     <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
                                 </div>
                                 <h2 class="card-title">K. Accessories</h2>
-                                <p>39.00 TK</p>
+                                <p class='price'>39.00 TK</p>
                             </div>
                         </div>
                     </div>
                     <!-- card 3 -->
-                    <div class="flex items-center justify-center">
+                    <div onclick="handleClick(this)" class="flex items-center justify-center">
                         <div class="card w-[320px] shadow-2xl">
                             <figure class="px-10">
                                 <div class="bg-[#1111110D] w-[302px] flex justify-center rounded-lg p-4">
@@ -126,16 +127,16 @@
                                     <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
                                 </div>
                                 <h2 class="card-title">Home Cooker</h2>
-                                <p>49.00 TK</p>
+                                <p class='price'>49.00 TK</p>
                             </div>
                         </div>
                     </div>
                 </div>
                 <!-- Sportswear Cards -->
                 <h3 class="mb-4 text-2xl font-semibold mt-14 text-center md:text-left">Sportswear</h3>
-                <div class="grid md:grid-cols-3 grid-cols-1 gap-4">
+                <div class="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4">
                     <!-- card 4 -->
-                    <div class="flex items-center justify-center">
+                    <div onclick="handleClick(this)" class="flex items-center justify-center">
                         <div class="card w-[320px] shadow-2xl">
                             <figure class="px-10">
                                 <div class="bg-[#1111110D] w-[302px] flex justify-center rounded-lg p-4">
@@ -152,12 +153,12 @@
                                     <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
                                 </div>
                                 <h2 class="card-title">Sports Back Cap</h2>
-                                <p>49.00 TK</p>
+                                <p class='price'>49.00 TK</p>
                             </div>
                         </div>
                     </div>
                     <!-- card 5 -->
-                    <div class="flex items-center justify-center">
+                    <div onclick="handleClick(this)" class="flex items-center justify-center">
                         <div class="card w-[320px] shadow-2xl">
                             <figure class="px-10">
                                 <div class="bg-[#1111110D] w-[302px] flex justify-center rounded-lg p-4">
@@ -174,12 +175,12 @@
                                     <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
                                 </div>
                                 <h2 class="card-title">Full Jersey Set</h2>
-                                <p>69.00 TK</p>
+                                <p class='price'>69.00 TK</p>
                             </div>
                         </div>
                     </div>
                     <!-- card 6 -->
-                    <div class="flex items-center justify-center">
+                    <div onclick="handleClick(this)" class="flex items-center justify-center">
                         <div class="card w-[320px] shadow-2xl">
                             <figure class="px-10">
                                 <div class="bg-[#1111110D] w-[302px] flex justify-center rounded-lg p-4">
@@ -196,16 +197,16 @@
                                     <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
                                 </div>
                                 <h2 class="card-title">Sports Cates</h2>
-                                <p>159.00 TK</p>
+                                <p class='price'>159.00 TK</p>
                             </div>
                         </div>
                     </div>
                 </div>
                 <!-- Furniture Cards -->
                 <h3 class="mb-4 text-2xl font-semibold mt-14 text-center md:text-left">Furniture</h3>
-                <div class="grid md:grid-cols-3 grid-cols-1 gap-4">
+                <div class="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4">
                     <!-- card 7 -->
-                    <div class="flex items-center justify-center">
+                    <div onclick="handleClick(this)" class="flex items-center justify-center">
                         <div class="card w-[320px] shadow-2xl">
                             <figure class="px-10">
                                 <div class="bg-[#1111110D] w-[302px] flex justify-center rounded-lg p-4">
@@ -222,12 +223,12 @@
                                     <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
                                 </div>
                                 <h2 class="card-title">Single Relax Chair</h2>
-                                <p>185.00 TK</p>
+                                <p class='price'>185.00 TK</p>
                             </div>
                         </div>
                     </div>
                     <!-- card 8 -->
-                    <div class="flex items-center justify-center">
+                    <div onclick="handleClick(this)" class="flex items-center justify-center">
                         <div class="card w-[320px] shadow-2xl">
                             <figure class="px-10">
                                 <div class="bg-[#1111110D] w-[302px] flex justify-center rounded-lg p-4">
@@ -244,12 +245,12 @@
                                     <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
                                 </div>
                                 <h2 class="card-title">Children Play</h2>
-                                <p>299.00 TK</p>
+                                <p class='price'>299.00 TK</p>
                             </div>
                         </div>
                     </div>
                     <!-- card 9 -->
-                    <div class="flex items-center justify-center">
+                    <div onclick="handleClick(this)" class="flex items-center justify-center">
                         <div class="card w-[320px] shadow-2xl">
                             <figure class="px-10">
                                 <div class="bg-[#1111110D] w-[302px] flex justify-center rounded-lg p-4">
@@ -266,7 +267,7 @@
                                     <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
                                 </div>
                                 <h2 class="card-title">Flexible Sofa</h2>
-                                <p>339.00 TK</p>
+                                <p class='price'>339.00 TK</p>
                             </div>
                         </div>
                     </div>
@@ -274,34 +275,61 @@
             </div>
             <!-- Right side with calculation part -->
             <div
-                class="col-span-1 p-4 w-[342px] mt-8 flex flex-col items-center justify-center sm:items-start sm:justify-start">
+                class="col-span-1 p-4 lg:w-[342px] mt-8 flex flex-col items-center justify-center sm:items-start sm:justify-start container mx-auto">
                 <div class="rounded-lg mb-2 shadow-2xl p-6">
                     <h3 class="font-medium text-2xl">Have Coupon?</h3>
                     <div class="flex mt-4">
-                        <input class="border p-2 flex-1" type="text" placeholder="Coupon Code">
-                        <button class="flex-1 rounded-r-lg bg-[#E527B2] text-white p-2"
-                            id="applyCouponButton">Apply</button>
+                        <input id="coupon-field" class="border p-2 flex-1" type="text" placeholder="Coupon Code">
+                        <button disabled class="flex-1 rounded-r-lg bg-[#E527B2] text-white p-2 disabled:bg-gray-300"
+                            id="apply-coupon-btn">Apply</button>
                     </div>
                 </div>
 
 
                 <div class="rounded-lg mb-2 shadow-2xl p-6 w-80">
-                    <div id="dynamicList" class="mb-2"></div>
+                    <ol id="list-container" class="mb-2 font-medium text-xl">
+
+                    </ol>
                     <hr class="border">
                     <div class="mb-2">
-                        <p class="font-medium text-2xl mt-4">Total Price:</p>
-                        <p class="font-medium text-2xl mt-4">Discount: </p>
-                        <p class="font-medium text-2xl mt-4">Total: </p>
+                        <p class="font-medium text-2xl mt-4">Total Price: <span id="first-total-price"
+                                class="font-thin"></span> TK</p>
+                        <p class="font-medium text-2xl mt-4">Discount: <span id="discount-price"
+                                class="font-thin"></span> TK</p>
+                        <p class="font-medium text-2xl mt-4">Total: <span id="grand-total-price"
+                                class="font-thin"></span> TK</p>
                     </div>
                     <hr class="border">
-                    <button class="bg-[#E527B2] text-white w-full rounded-md py-3 mt-4" id="purchaseButton">Make
-                        Purchase</button>
+                    <!-- Open the modal using ID.showModal() method -->
+                    <button disabled id="purchase-btn"
+                        class="btn bg-[#E527B2] text-white p-2 mt-4 w-full disabled:bg-gray-300"
+                        onclick="my_modal_5.showModal()">Make Purchase</button>
+                    <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
+
+                        <div class="card w-96 bg-base-100 shadow-xl">
+                            <figure class="px-10 pt-10">
+                                <img src="./images/congo.png" alt="Shoes" class="rounded-xl" />
+                            </figure>
+                            <div class="card-body items-center text-center">
+                                <h2 class="card-title font-bold text-3xl">Congratulations</h2>
+                                <p class="mt-2">Thanks for choosing us! Enjoy!</p>
+                                <div class="card-actions">
+                                    <button id="go-home-btn" class="btn bg-[#E527B2] text-white px-12 ,mt-4">Go
+                                        Home</button>
+                                </div>
+                            </div>
+                        </div>
+
                 </div>
+                </dialog>
             </div>
+        </div>
 
         </div>
 
     </main>
+
+    <script src="js/script.js"></script>
 </body>
 
 </html>
