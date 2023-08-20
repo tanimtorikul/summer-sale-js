@@ -39,32 +39,37 @@ function handleClick(target) {
         applyCouponButton.disabled = true;
     }
 
-    // applying coupon code to calculate discount
-    document.getElementById('apply-coupon-btn').addEventListener('click', function () {
-        const couponField = document.getElementById('coupon-field');
-        const discountPrice = document.getElementById('discount-price');
-        if (couponField.value === 'SELL200') {
-            const discountMoney = parseFloat(firstTotalPrice.innerText) * 0.2;
-            discountPrice.innerText = discountMoney.toFixed(2);
 
-            // calculating grandTotal
-            grandTotal.innerText = (parseFloat(firstTotalPrice.innerText) - parseFloat(discountPrice.innerText)).toFixed(2);
-        }
-        else {
-            alert('Invalid coupon code. Please enter a valid coupon code.');
-        }
-        // clearing the coupon input field
-        couponField.value = '';
-
-
-
-    })
     // go home but when clicked go to home page and refresh data
     document.getElementById('go-home-btn').addEventListener('click', function () {
-
         window.location.href = 'index.html';
     })
 
 }
 
+// get the total and set
+const firstTotalPrice = document.getElementById('first-total-price');
+firstTotalPrice.innerText = total.toFixed(2);
 
+// get the grand total and set
+const grandTotal = document.getElementById('grand-total-price');
+grandTotal.innerText = parseFloat(firstTotalPrice.innerText).toFixed(2);
+
+// applying coupon code to calculate discount
+document.getElementById('apply-coupon-btn').addEventListener('click', function () {
+    const couponField = document.getElementById('coupon-field');
+    const discountPrice = document.getElementById('discount-price');
+    if (couponField.value === 'SELL200') {
+        const discountMoney = parseFloat(firstTotalPrice.innerText) * 0.2;
+        discountPrice.innerText = discountMoney.toFixed(2);
+
+        // calculating grandTotal
+        grandTotal.innerText = (parseFloat(firstTotalPrice.innerText) - parseFloat(discountPrice.innerText)).toFixed(2);
+    }
+    else {
+        alert('Invalid coupon code.');
+    }
+    // clearing the coupon input field
+    couponField.value = '';
+
+})
