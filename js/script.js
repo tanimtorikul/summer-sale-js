@@ -41,30 +41,32 @@ function applyCoupon() {
     const grandTotal = document.getElementById('grand-total-price');
     const firstTotalPrice = document.getElementById('first-total-price');
 
+
     if (couponField.value === 'SELL200') {
         const discountMoney = parseFloat(firstTotalPrice.innerText) * 0.2;
         discountPrice.innerText = discountMoney.toFixed(2);
-
         grandTotal.innerText = (total - discountMoney).toFixed(2);
-    } else {
-        alert('Please enter valid coupon code');
-        discountPrice.innerText = '0.00';
-        grandTotal.innerText = total.toFixed(2);
+
     }
+    else {
+        alert('Please enter valid coupon code');
+
+    }
+
 }
+
+
+// add event listener in apply button
+document.getElementById('apply-coupon-btn').addEventListener('click', function () {
+    // called the applyCoupon function when Apply button is clicked
+    applyCoupon();
+    couponApplied = true;
+
+
+})
 
 // go home but when clicked go to home page and refresh data
 document.getElementById('go-home-btn').addEventListener('click', function () {
     window.location.href = 'index.html';
 })
 
-const couponField = document.getElementById('coupon-field');
-// add event listener in apply button
-document.getElementById('apply-coupon-btn').addEventListener('click', function () {
-    // called the applyCoupon function when Apply button is clicked
-    applyCoupon();
-    couponApplied = true;
-    // clearing the coupon input field
-    couponField.value = '';
-
-})
