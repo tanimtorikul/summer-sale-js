@@ -32,7 +32,7 @@ function handleClick(target) {
     // apply button enable
     const applyCouponButton = document.getElementById("apply-coupon-btn");
 
-    if (firstTotalPrice.innerText > 200) {
+    if (firstTotalPrice.innerText >= 200) {
         applyCouponButton.disabled = false;
     }
     else {
