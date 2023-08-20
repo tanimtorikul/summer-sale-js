@@ -56,6 +56,7 @@ const grandTotal = document.getElementById('grand-total-price');
 grandTotal.innerText = parseFloat(firstTotalPrice.innerText).toFixed(2);
 
 // applying coupon code to calculate discount
+// add event listener in apply button
 document.getElementById('apply-coupon-btn').addEventListener('click', function () {
     const couponField = document.getElementById('coupon-field');
     const discountPrice = document.getElementById('discount-price');
@@ -67,7 +68,7 @@ document.getElementById('apply-coupon-btn').addEventListener('click', function (
         grandTotal.innerText = (parseFloat(firstTotalPrice.innerText) - parseFloat(discountPrice.innerText)).toFixed(2);
     }
     else {
-        alert('Invalid coupon code.');
+        alert('Please enter valid coupon code')
     }
     // clearing the coupon input field
     couponField.value = '';
