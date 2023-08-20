@@ -22,7 +22,7 @@ function handleClick(target) {
     grandTotal.innerText = parseFloat(firstTotalPrice.innerText).toFixed(2);
 
     // update discount and grand total if coupon applied
-    if (couponApplied) {
+    if (couponApplied === true) {
         applyCoupon();
     }
     // enable or disable purchase button and coupon button
@@ -58,6 +58,7 @@ document.getElementById('go-home-btn').addEventListener('click', function () {
     window.location.href = 'index.html';
 })
 
+const couponField = document.getElementById('coupon-field');
 // add event listener in apply button
 document.getElementById('apply-coupon-btn').addEventListener('click', function () {
     // called the applyCoupon function when Apply button is clicked
