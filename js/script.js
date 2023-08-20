@@ -39,13 +39,12 @@ function handleClick(target) {
         applyCouponButton.disabled = true;
     }
 
-
-    // go home but when clicked go to home page and refresh data
-    document.getElementById('go-home-btn').addEventListener('click', function () {
-        window.location.href = 'index.html';
-    })
-
 }
+
+// go home but when clicked go to home page and refresh data
+document.getElementById('go-home-btn').addEventListener('click', function () {
+    window.location.href = 'index.html';
+})
 
 // get the total and set
 const firstTotalPrice = document.getElementById('first-total-price');
@@ -59,8 +58,11 @@ grandTotal.innerText = parseFloat(firstTotalPrice.innerText).toFixed(2);
 // add event listener in apply button
 document.getElementById('apply-coupon-btn').addEventListener('click', function () {
     const couponField = document.getElementById('coupon-field');
+    // get the discount price 
     const discountPrice = document.getElementById('discount-price');
+    // validation of coupon code
     if (couponField.value === 'SELL200') {
+        // calculating the discount price 
         const discountMoney = parseFloat(firstTotalPrice.innerText) * 0.2;
         discountPrice.innerText = discountMoney.toFixed(2);
 
