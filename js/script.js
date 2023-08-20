@@ -52,15 +52,15 @@ function handleClick(target) {
         }
 
 
+        // clearing the coupon input field
         couponField.value = '';
 
-        const grandTotal = document.getElementById('grand-total-price');
+        // calculating grandTotal
         grandTotal.innerText = parseFloat(firstTotalPrice.innerText) - parseFloat(discountPrice.innerText).toFixed(2);
 
     })
     // go home but when clicked go to home page and refresh data
-    document.getElementById('go-home-btn').addEventListener('click', function (event) {
-        event.preventDefault();
+    document.getElementById('go-home-btn').addEventListener('click', function () {
         window.location.href = 'index.html';
     })
 
