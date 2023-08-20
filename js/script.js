@@ -20,7 +20,6 @@ function handleClick(target) {
     const grandTotal = document.getElementById('grand-total-price');
     grandTotal.innerText = parseFloat(firstTotalPrice.innerText).toFixed(2);
 
-
     // purchase button enable
     const purchaseBtn = document.getElementById('purchase-btn');
     if (firstTotalPrice.innerText > 0) {
@@ -40,8 +39,6 @@ function handleClick(target) {
         applyCouponButton.disabled = true;
     }
 
-
-
     // applying coupon code to calculate discount
     document.getElementById('apply-coupon-btn').addEventListener('click', function () {
         const couponField = document.getElementById('coupon-field');
@@ -50,21 +47,17 @@ function handleClick(target) {
             const discountMoney = parseFloat(firstTotalPrice.innerText) * 0.2;
             discountPrice.innerText = discountMoney.toFixed(2);
         }
-
-
         // clearing the coupon input field
         couponField.value = '';
 
         // calculating grandTotal
-        grandTotal.innerText = parseFloat(firstTotalPrice.innerText) - parseFloat(discountPrice.innerText).toFixed(2);
+        grandTotal.innerText = (parseFloat(firstTotalPrice.innerText) - parseFloat(discountPrice.innerText)).toFixed(2);
 
     })
     // go home but when clicked go to home page and refresh data
     document.getElementById('go-home-btn').addEventListener('click', function () {
         window.location.href = 'index.html';
     })
-
-
 
 }
 
