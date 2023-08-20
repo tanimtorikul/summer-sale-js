@@ -1,4 +1,5 @@
 let total = 0;
+let couponApplied = false;
 
 function handleClick(target) {
     // set the product title as an ordered list
@@ -20,13 +21,36 @@ function handleClick(target) {
     const grandTotal = document.getElementById('grand-total-price');
     grandTotal.innerText = parseFloat(firstTotalPrice.innerText).toFixed(2);
 
-   // enable or disable purchase button and coupon button
-   var purchaseBtn = document.getElementById('purchase-btn');
-   var applyCouponButton = document.getElementById("apply-coupon-btn");
-   
-   purchaseBtn.disabled = total <= 0;
-   applyCouponButton.disabled = total < 200;
+    // update discount and grand total if coupon applied
+    if (couponApplied) {
+        applyCoupon();
+    }
+    // enable or disable purchase button and coupon button
+    var purchaseBtn = document.getElementById('purchase-btn');
+    var applyCouponButton = document.getElementById("apply-coupon-btn");
 
+    purchaseBtn.disabled = total <= 0;
+    applyCouponButton.disabled = total < 200;
+
+}
+
+// applying coupon code to calculate discount
+function applyCoupon() {
+    const couponField = document.getElementById('coupon-field');
+    const discountPrice = document.getElementById('discount-price');
+    const grandTotal = document.getElementById('grand-total-price');
+    const firstTotalPrice = document.getElementById('first-total-price');
+
+    if (couponField.value === 'SELL200') {
+        const discountMoney = parseFloat(firstTotalPrice.innerText) * 0.2;
+        discountPrice.innerText = discountMoney.toFixed(2);
+
+        grandTotal.innerText = (total - discountMoney).toFixed(2);
+    } else {
+        alert('Please enter valid coupon code');
+        discountPrice.innerText = '0.00';
+        grandTotal.innerText = total.toFixed(2);
+    }
 }
 
 // go home but when clicked go to home page and refresh data
@@ -34,37 +58,11 @@ document.getElementById('go-home-btn').addEventListener('click', function () {
     window.location.href = 'index.html';
 })
 
-// get the total and set
-const firstTotalPrice = document.getElementById('first-total-price');
-firstTotalPrice.innerText = total.toFixed(2);
-
-// get the grand total and set
-const grandTotal = document.getElementById('grand-total-price');
-grandTotal.innerText = parseFloat(firstTotalPrice.innerText).toFixed(2);
-
-// applying coupon code to calculate discount
 // add event listener in apply button
 document.getElementById('apply-coupon-btn').addEventListener('click', function () {
-    const couponField = document.getElementById('coupon-field');
-    // get the discount price 
-    const discountPrice = document.getElementById('discount-price');
-    var grandTotal = document.getElementById('grand-total-price');
-    var firstTotalPrice = document.getElementById('first-total-price');
-    // validation of coupon code
-    if (couponField.value === 'SELL200') {
-        // calculating the discount price 
-        const discountMoney = parseFloat(firstTotalPrice.innerText) * 0.2;
-        discountPrice.innerText = discountMoney.toFixed(2);
-
-        // calculating grandTotal
-        grandTotal.innerText = (total - discountMoney).toFixed(2);
-        
-    }
-    else {
-        alert('Please enter valid coupon code');
-        discountPrice.innerText = '0.00';
-        grandTotal.innerText = total.toFixed(2);
-    }
+    // called the applyCoupon function when Apply button is clicked
+    applyCoupon();
+    couponApplied = true;
     // clearing the coupon input field
     couponField.value = '';
 
