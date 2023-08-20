@@ -46,16 +46,22 @@ function handleClick(target) {
         if (couponField.value === 'SELL200') {
             const discountMoney = parseFloat(firstTotalPrice.innerText) * 0.2;
             discountPrice.innerText = discountMoney.toFixed(2);
+
+            // calculating grandTotal
+            grandTotal.innerText = (parseFloat(firstTotalPrice.innerText) - parseFloat(discountPrice.innerText)).toFixed(2);
+        }
+        else {
+            alert('Invalid coupon code. Please enter a valid coupon code.');
         }
         // clearing the coupon input field
         couponField.value = '';
 
-        // calculating grandTotal
-        grandTotal.innerText = (parseFloat(firstTotalPrice.innerText) - parseFloat(discountPrice.innerText)).toFixed(2);
+
 
     })
     // go home but when clicked go to home page and refresh data
     document.getElementById('go-home-btn').addEventListener('click', function () {
+
         window.location.href = 'index.html';
     })
 
