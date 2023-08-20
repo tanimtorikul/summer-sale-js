@@ -59,7 +59,8 @@ function handleClick(target) {
 
     })
     // go home but when clicked go to home page and refresh data
-    document.getElementById('go-home-btn').addEventListener('click', function () {
+    document.getElementById('go-home-btn').addEventListener('click', function (event) {
+        event.preventDefault();
         window.location.href = 'index.html';
     })
 
