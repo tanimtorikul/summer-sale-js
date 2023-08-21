@@ -56,13 +56,13 @@
             class="container mx-auto flex flex-col lg:flex-row md:flex-col justify-center items-center gap-12 lg:h-[850px] lg:mt-0 mt-6">
             <div class="text-center">
                 <h4 class="font-medium text-2xl">---SALE FEVER---</h4>
-                <h2 class="font-bold text-3xl lg:text-6xl mt-12">Purchase BDT 200 or <br> above & get<span
+                <h2 class="font-bold lg:text-6xl md:text-4xl text-2xl mt-12">Purchase BDT 200 or <br> above & get<span
                         class="text-[#E527B2]">
                         20% off</span></h2>
                 <p class="mt-16 text-2xl font-medium">Use Promo Code <span
                         class="bg-[#E527B2] px-5 py-4 rounded-lg text-white">SELL200</span></p>
             </div>
-            <div>
+            <div class="lg:w-full w-3/4">
                 <img src="./images/Summer 1.png" alt="">
             </div>
         </div>
@@ -287,8 +287,8 @@
                 class="lg:col-span-1 p-0 mt-8 flex lg:flex-col sm:flex-row flex-col gap-6 justify-center md:justify-center lg:justify-start items-center md:items-center lg:items-start lg:order-last container mx-auto">
                 <!-- coupon area -->
                 <div
-                    class="rounded-lg mb-2 shadow-lg p-6 md:text-start lg:text-left sm:text-center lg:w-80 sm:w-full flex flex-col items-start">
-                    <h3 class="font-medium text-2xl">Have Coupon?</h3>
+                    class="rounded-lg mb-2 shadow-lg p-6 md:text-start lg:text-left text-center lg:w-80 sm:w-full flex flex-col  lg:items-start">
+                    <h3 class="font-medium lg:text-2xl text-xl">Have Coupon?</h3>
                     <div class="flex mt-4">
                         <input id="coupon-field" class="border border-r-0 outline-none rounded-l-lg p-2 flex-1"
                             type="text" placeholder="Coupon Code">
@@ -296,9 +296,10 @@
                             id="apply-coupon-btn">Apply</button>
 
                     </div>
-                    <p id="invalid-message" class="text-red-500 hidden text-base font-medium">Invalid, Make sure it is
+                    <p id="invalid-message" class="text-red-500 hidden text-base font-medium mt-4">Invalid, Make sure it
+                        is
                         "SELL200"</p>
-                    <p id="success-message" class="text-green-500 hidden text-base font-medium"></p>
+                    <p id="success-message" class="text-green-500 hidden text-base font-medium mt-4"></p>
                 </div>
 
                 <!-- cart area -->
@@ -308,11 +309,11 @@
                     </ol>
                     <hr class="border">
                     <div class="mb-2">
-                        <p class="font-medium text-2xl mt-4">Total Price: <span id="first-total-price"
+                        <p class="font-medium md:text-2xl text-xl mt-4 ">Total Price: <span id="first-total-price"
                                 class="font-thin">0.00</span> BDT</p>
-                        <p class="font-medium text-2xl mt-4">Discount: <span id="discount-price"
+                        <p class="font-medium md:text-2xl text-xl mt-4">Discount: <span id="discount-price"
                                 class="font-thin">0.00</span> BDT</p>
-                        <p class="font-medium text-2xl mt-4">Total: <span id="grand-total-price"
+                        <p class="font-medium md:text-3xl text-2xl mt-4">Total: <span id="grand-total-price"
                                 class="font-thin">0.00</span> BDT</p>
                     </div>
                     <hr class="border">
