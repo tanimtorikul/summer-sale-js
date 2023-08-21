@@ -47,16 +47,20 @@ function applyCoupon() {
     const couponField = document.getElementById('coupon-field');
     const discountPrice = document.getElementById('discount-price');
     const showInvalidMsg = document.getElementById('invalid-message');
-
+    const successMessage = document.getElementById('success-message');
 
     if (couponField.value === 'SELL200') {
         const discountMoney = 0.2 * total;
         discountPrice.innerText = discountMoney.toFixed(2);
+        successMessage.style = 'none';
+        successMessage.innerText = 'Success! Coupon Applied';
+        successMessage.style.display = 'block';
         showInvalidMsg.style.display = 'none';
 
     }
     else {
         showInvalidMsg.style.display = 'block';
+        successMessage.style.display = 'none';
         discountPrice.innerText = '0.00';
         clearCouponField();
     }
