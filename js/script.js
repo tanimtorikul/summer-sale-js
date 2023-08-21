@@ -56,7 +56,6 @@ function applyCoupon() {
         successMessage.innerText = 'Success! Coupon Applied';
         successMessage.style.display = 'block';
         showInvalidMsg.style.display = 'none';
-        clearCouponField();
 
     }
     else {
