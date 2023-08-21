@@ -4,69 +4,73 @@ let couponApplied = false;
 function handleClick(target) {
     // set the product title as an ordered list
     const productTitle = target.querySelector('.card-title').innerText;
-    const li = document.createElement('li');
-    li.innerText = productTitle;
     const selectedItemContainer = document.getElementById('list-container');
     const liNumber = selectedItemContainer.children.length + 1;
+    const li = document.createElement('li');
     li.innerText = liNumber + '. ' + productTitle;
     selectedItemContainer.appendChild(li);
 
     // set the price to total price
-    const price = target.querySelector('.price').innerText.split(' ')[0];
-    total = parseFloat(total) + parseFloat(price);
-    const firstTotalPrice = document.getElementById('first-total-price');
-    firstTotalPrice.innerText = total.toFixed(2);
+    const price = parseFloat(target.querySelector('.price').innerText.split(' ')[0]);
+    total += price;
+    // calling the function updateTotal 
+    updateTotal();
 
-    // set the grand total price
-    const grandTotal = document.getElementById('grand-total-price');
-    grandTotal.innerText = parseFloat(firstTotalPrice.innerText).toFixed(2);
-
-    // update discount and grand total if coupon applied
-    if (couponApplied === true) {
-        applyCoupon();
-    }
-    // enable or disable purchase button and coupon button
-    var purchaseBtn = document.getElementById('purchase-btn');
-    var applyCouponButton = document.getElementById("apply-coupon-btn");
-
+    const purchaseBtn = document.getElementById('purchase-btn');
+    const applyCouponButton = document.getElementById('apply-coupon-btn');
     purchaseBtn.disabled = total <= 0;
     applyCouponButton.disabled = total < 200;
 
+    // if coupon is applied update the discount when adding another card
+    if (couponApplied) {
+        applyCoupon();
+    }
 }
 
-// applying coupon code to calculate discount
+// a total price calculation function to get and set the total and grand price
+function updateTotal() {
+    const firstTotalPrice = document.getElementById('first-total-price');
+    const grandTotal = document.getElementById('grand-total-price');
+    const discountPrice = document.getElementById('discount-price');
+
+    firstTotalPrice.innerText = total.toFixed(2);
+    grandTotal.innerText = (total - parseFloat(discountPrice.innerText)).toFixed(2);
+}
+
+// function to clear the coupon field
+function clearCouponField() {
+    const couponField = document.getElementById('coupon-field');
+    couponField.value = '';  // Clear the coupon field
+}
+// applying coupon code to calculate discount and set the discount
 function applyCoupon() {
     const couponField = document.getElementById('coupon-field');
     const discountPrice = document.getElementById('discount-price');
-    const grandTotal = document.getElementById('grand-total-price');
-    const firstTotalPrice = document.getElementById('first-total-price');
+    const showInvalidMsg = document.getElementById('invalid-message');
 
 
     if (couponField.value === 'SELL200') {
-        const discountMoney = parseFloat(firstTotalPrice.innerText) * 0.2;
+        const discountMoney = 0.2 * total;
         discountPrice.innerText = discountMoney.toFixed(2);
-        grandTotal.innerText = (total - discountMoney).toFixed(2);
+        showInvalidMsg.style.display = 'none';
 
     }
     else {
-        alert('Please enter valid coupon code');
-
+        showInvalidMsg.style.display = 'block';
+        discountPrice.innerText = '0.00';
+        clearCouponField();
     }
 
+    updateTotal();
 }
-
 
 // add event listener in apply button
 document.getElementById('apply-coupon-btn').addEventListener('click', function () {
-    // called the applyCoupon function when Apply button is clicked
     applyCoupon();
     couponApplied = true;
-
-
-})
+});
 
 // go home but when clicked go to home page and refresh data
 document.getElementById('go-home-btn').addEventListener('click', function () {
     window.location.href = 'index.html';
-})
-
+});

@@ -30,13 +30,20 @@
             transition: transform 0.3s ease-in-out;
             border-radius: 8px;
             padding: 10px;
+            border: .5px solid rgb(223, 205, 223);
         }
 
         .card:hover {
             transform: scale(1.10);
             background-color: #f2f2f2;
             color: #c21a98;
-            border: .5px solid rgb(223, 205, 223);
+            
+        }
+
+        @media (max-width: 767px) {
+            .card:hover {
+                transform: none;
+            }
         }
     </style>
 
@@ -46,7 +53,7 @@
     <header class="bg-[#F9F6E2]">
         <div
             class="container mx-auto flex flex-col lg:flex-row md:flex-col justify-center items-center gap-12  lg:h-[850px]">
-            <div class="text-center">
+            <div class="text-center mt-6">
                 <h4 class="font-medium text-2xl">---SALE FEVER---</h4>
                 <h2 class="font-bold text-3xl lg:text-6xl mt-12">Purchase TK 200 or <br> above & get<span
                         class="text-[#E527B2]">
@@ -60,15 +67,15 @@
         </div>
     </header>
     <main id="main-section" class="lg:pt-32">
-        <div class="grid lg:grid-cols-3 md:grid-cols-1 grid-cols-1 gap-20 container mx-auto">
+        <div class="grid lg:grid-cols-3  lg:gap-20 container mx-auto">
             <!-- Left side with 9 cards -->
             <div class="lg:col-span-2 order-last md:order-last lg:order-first">
                 <!-- Kitchnware Cards -->
                 <h3 class="text-2xl font-semibold mb-4 text-center md:text-center lg:text-start">Kitchenware</h3>
-                <div class="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4">
+                <div class="grid lg:grid-cols-3 sm:grid-cols-2 md:grid-cols-2 grid-cols-1 gap-10 px-6 mt-12">
                     <!-- card 1 -->
                     <div onclick="handleClick(this)" class="flex items-center justify-center">
-                        <div class="card w-[320px] shadow-2xl">
+                        <div class="card w-full lg:w-[320px]  shadow-lg">
                             <figure class="px-10">
                                 <div class="bg-[#1111110D] w-[302px] flex justify-center rounded-lg p-4">
                                     <img src="./images/prod1.png" alt="Shoes" class="rounded-xl" />
@@ -90,7 +97,7 @@
                     </div>
                     <!-- card 2 -->
                     <div onclick="handleClick(this)" class="flex items-center justify-center">
-                        <div class="card w-[320px] shadow-2xl">
+                        <div class="card w-full lg:w-[320px] shadow-lg">
                             <figure class="px-10">
                                 <div class="bg-[#1111110D] w-[302px] flex justify-center rounded-lg p-4">
                                     <img src="./images/prod2.png" alt="Shoes" class="rounded-xl" />
@@ -112,7 +119,7 @@
                     </div>
                     <!-- card 3 -->
                     <div onclick="handleClick(this)" class="flex items-center justify-center">
-                        <div class="card w-[320px] shadow-2xl">
+                        <div class="card w-full lg:w-[320px] shadow-lg">
                             <figure class="px-10">
                                 <div class="bg-[#1111110D] w-[302px] flex justify-center rounded-lg p-4">
                                     <img src="./images/prod3.png" alt="Shoes" class="rounded-xl" />
@@ -133,12 +140,12 @@
                         </div>
                     </div>
                 </div>
-                <!-- Sportswear Cards -->
+                <!-- Sportswer Cards -->
                 <h3 class="mb-4 text-2xl font-semibold mt-14 text-center md:text-center lg:text-start">Sportswear</h3>
-                <div class="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4">
+                <div class="grid lg:grid-cols-3 sm:grid-cols-2 md:grid-cols-2 grid-cols-1 gap-10 px-6 mt-12">
                     <!-- card 4 -->
                     <div onclick="handleClick(this)" class="flex items-center justify-center">
-                        <div class="card w-[320px] shadow-2xl">
+                        <div class="card w-full lg:w-[320px] shadow-lg">
                             <figure class="px-10">
                                 <div class="bg-[#1111110D] w-[302px] flex justify-center rounded-lg p-4">
                                     <img src="./images/prod4.png" alt="Shoes" class="rounded-xl" />
@@ -160,7 +167,7 @@
                     </div>
                     <!-- card 5 -->
                     <div onclick="handleClick(this)" class="flex items-center justify-center">
-                        <div class="card w-[320px] shadow-2xl">
+                        <div class="card w-full lg:w-[320px] shadow-lg">
                             <figure class="px-10">
                                 <div class="bg-[#1111110D] w-[302px] flex justify-center rounded-lg p-4">
                                     <img src="./images/prod5.png" alt="Shoes" class="rounded-xl" />
@@ -182,7 +189,7 @@
                     </div>
                     <!-- card 6 -->
                     <div onclick="handleClick(this)" class="flex items-center justify-center">
-                        <div class="card w-[320px] shadow-2xl">
+                        <div class="card w-full lg:w-[320px] shadow-lg">
                             <figure class="px-10">
                                 <div class="bg-[#1111110D] w-[302px] flex justify-center rounded-lg p-4">
                                     <img src="./images/prod6.png" alt="Shoes" class="rounded-xl" />
@@ -205,10 +212,10 @@
                 </div>
                 <!-- Furniture Cards -->
                 <h3 class="mb-4 text-2xl font-semibold mt-14 text-center md:text-center lg:text-start">Furniture</h3>
-                <div class="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4">
+                <div class="grid lg:grid-cols-3 sm:grid-cols-2 md:grid-cols-2 grid-cols-1 gap-10 px-6 mt-12">
                     <!-- card 7 -->
                     <div onclick="handleClick(this)" class="flex items-center justify-center">
-                        <div class="card w-[320px] shadow-2xl">
+                        <div class="card w-full lg:w-[320px] shadow-lg">
                             <figure class="px-10">
                                 <div class="bg-[#1111110D] w-[302px] flex justify-center rounded-lg p-4">
                                     <img src="./images/prod7.png" alt="Shoes" class="rounded-xl" />
@@ -230,7 +237,7 @@
                     </div>
                     <!-- card 8 -->
                     <div onclick="handleClick(this)" class="flex items-center justify-center">
-                        <div class="card w-[320px] shadow-2xl">
+                        <div class="card w-full lg:w-[320px] shadow-lg">
                             <figure class="px-10">
                                 <div class="bg-[#1111110D] w-[302px] flex justify-center rounded-lg p-4">
                                     <img src="./images/prod8.png" alt="Shoes" class="rounded-xl" />
@@ -252,7 +259,7 @@
                     </div>
                     <!-- card 9 -->
                     <div onclick="handleClick(this)" class="flex items-center justify-center">
-                        <div class="card w-[320px] shadow-2xl">
+                        <div class="card w-full lg:w-[320px] shadow-lg">
                             <figure class="px-10">
                                 <div class="bg-[#1111110D] w-[302px] flex justify-center rounded-lg p-4">
                                     <img src="./images/prod9.png" alt="Shoes" class="rounded-xl" />
@@ -276,19 +283,22 @@
             </div>
             <!-- Right side with calculation part -->
             <div
-                class="lg:col-span-1 p-4 mt-8 flex flex-col justify-center md:justify-center lg:justify-start items-center md:items-center lg:items-start lg:order-last container mx-auto">
+                class="lg:col-span-1 p-4 mt-8 flex lg:flex-col sm:flex-row flex-col gap-6  justify-center md:justify-center lg:justify-start items-center md:items-center lg:items-start lg:order-last container mx-auto">
                 <div
-                    class="rounded-lg mb-2 shadow-2xl p-6 md:text-start lg:text-start sm:text-center w-[342px] flex flex-col items-center">
+                    class="rounded-lg mb-2 shadow-lg p-6 md:text-start lg:text-left sm:text-center w-[342px] flex flex-col items-start">
                     <h3 class="font-medium text-2xl">Have Coupon?</h3>
                     <div class="flex mt-4">
                         <input id="coupon-field" class="border border-r-0 outline-none rounded-l-lg p-2 flex-1"
                             type="text" placeholder="Coupon Code">
                         <button disabled class="flex-1 rounded-r-lg bg-[#E527B2] text-white p-2 disabled:bg-gray-300"
                             id="apply-coupon-btn">Apply</button>
+
                     </div>
+                    <p id="invalid-message" class="text-red-600" style="display: none;">Invalid coupon code</p>
+
                 </div>
 
-                <div class="rounded-lg mb-2 shadow-2xl p-6 md:text-start text-center w-[342px]">
+                <div class="rounded-lg mb-2 shadow-lg p-6 md:text-start text-center w-[342px]">
                     <ol id="list-container" class="mb-2 font-medium text-xl">
                         <!-- Here is items which will be added dynamically -->
                     </ol>
@@ -310,7 +320,7 @@
 
                 <dialog id="my_modal_5" class="modal modal-center sm:modal-middle">
                     <div
-                        class="card flex flex-col justify-center items-center w-full sm:w-96 max-w-[90%] bg-base-100 shadow-xl">
+                        class="card flex flex-col justify-center items-center w-full sm:w-96 max-w-[90%] bg-base-100 shadow-lg">
                         <figure class="px-10 pt-10">
                             <img src="./images/congo.png" alt="Shoes" class="rounded-xl" />
                         </figure>
